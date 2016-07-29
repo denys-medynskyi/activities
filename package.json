@@ -1,0 +1,19 @@
+{
+  "name": "activities",
+  "version": "1.0.0",
+  "description": "When you are not sure want to do - this app will help you",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skrypalyk/activities.git"
+  },
+  "author": "Denys Medynskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skrypalyk/activities/issues"
+  },
+  "homepage": "https://github.com/skrypalyk/activities#readme"
+}
