@@ -1,2 +1,6 @@
-// skip RubyMine files
+// RubyMine
 .idea
+// web pack build
+/bin
+// obvious
+/node_modules
