@@ -2,5 +2,13 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import App from './components/App'
 
-render(React.createElement('div'), document.getElementById('root'))
+let store = createStore(App, window.devToolsExtension && window.devToolsExtension());
+
+render(
+<Provider store={store}>
+    <App />
+    </Provider>,
+    document.getElementById('root')
+)
