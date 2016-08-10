@@ -1,23 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore, applyMiddleware, compose, Provider, combineReducers } from 'redux';
-
-import { todos } from './reducers/activities'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 
 import App from './components/App'
+import appReducer from './reducers'
 
-const activitiesApp = combineReducers({
-    todos
-})
-
-
-let store = createStore(activitiesApp);
-
-console.log(store.getState());
+let store = createStore(appReducer);
 
 render(
-<Provider store={store}>
-    <App></App>
-</Provider>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
     document.getElementById('root')
 )

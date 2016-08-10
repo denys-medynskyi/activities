@@ -7,7 +7,6 @@ const TextInput = ({ id, name, placeholder, onChange, value }) => (
                 placeholder={placeholder || name}
                 id={id} type="text"
                 className="validate"
-                onChange={onChange}
                 name={name}
                 value={value}
             />
@@ -19,7 +18,6 @@ const TextInput = ({ id, name, placeholder, onChange, value }) => (
 TextInput.propTypes = {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        onChange: PropTypes.func.isRequired,
         placeholder: PropTypes.string,
         value: PropTypes.string
 }

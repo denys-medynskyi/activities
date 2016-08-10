@@ -1,26 +1,26 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import { activityFormChanged } from '../actions/index'
-
-const onSubmit = (e) => {
-    e.preventDefault();
-    console.log('onSubmit')
-}
+import ActivityForm from '../components/ActivityForm'
 
 
 const mapStateToProps = (state) => {
     return {
-        header: state.form.header,
-        name: state.form.data.name,
-        tag: state.form.data.tag
     }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        activityFormChanged: dispatch(activityFormChanged)
+        onClick: () => {
+            console.log('click');
+        }
     }
 }
 
+const AddActivity = (props) => {
+    return <ActivityForm header="New activity" onClick={props.onClick}/>
+}
 
-export default AddActivity
+export default connect(mapStateToProps, mapDispatchToProps)(AddActivity)
+
