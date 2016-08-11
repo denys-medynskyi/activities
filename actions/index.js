@@ -11,21 +11,17 @@ export const ACTIVITY_FORM_CHANGED = 'ACTIVITY_FORM_CHANGED'
 
 let nextId = 0
 
-export const addActivityAction = (name, tag) => {
+export const addActivity = () => {
     return {
         type: ADD_ACTIVITY,
-        id: nextId++,
-        name: name,
-        tag: tag
+        id: nextId++
     };
 }
 
-export const activityFormChanged = (inputName, value) => {
-    var form = {};
-    form[inputName] = value;
-
+export const activityFormChanged = (inputName, inputValue) => {
     return {
         type: ACTIVITY_FORM_CHANGED,
-        form: form
+        inputName,
+        inputValue
     }
 }

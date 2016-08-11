@@ -3,18 +3,23 @@ import TextInput from '../components/Form/TextInput'
 import PageHeader from '../components/PageHeader'
 
 
-const ActivityForm = ({header, onClick}) => {
+const ActivityForm = ({header, nameValue, tagValue, onSubmitAction, onFormUpdate}) => {
+    console.log(nameValue)
     const onSubmit = (e) => {
         e.preventDefault();
-        onClick();
+        onSubmitAction();
+    }
+
+    const updateForm = (e) => {
+        onFormUpdate(e.target.name, e.target.value);
     }
 
     return (
         <div className="row">
-            <form className="col s6" onSubmit={onClick}>
+            <form className="col s6" onSubmit={onSubmit}>
                 <PageHeader text={header}></PageHeader>
-                <TextInput id="name" placeholder="Enter name" name="name"></TextInput>
-                <TextInput id="tag" placeholder="Enter tag" name="tag"></TextInput>
+                <TextInput id="name" defaultValue={nameValue} placeholder="Enter name" name="name" onChange={updateForm}></TextInput>
+                <TextInput id="tag" defaultValue={tagValue} placeholder="Enter tag" name="tag" onChange={updateForm}></TextInput>
                 <div className="row">
                     <div className="col s12">
                         <button className="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -30,7 +35,8 @@ const ActivityForm = ({header, onClick}) => {
 
 ActivityForm.propTypes = {
     header: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired
+    onSubmitAction: PropTypes.func.isRequired,
+    onFormUpdate: PropTypes.func.isRequired
 }
 
 export default ActivityForm

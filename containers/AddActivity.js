@@ -6,20 +6,25 @@ import ActivityForm from '../components/ActivityForm'
 
 const mapStateToProps = (state) => {
     return {
+        nameValue: state.form.name,
+        tagValue: state.form.tag
     }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClick: () => {
-            console.log('click');
+        onSubmitAction: () => {
+            dispatch(addActivity())
+        },
+        onFormUpdate: (inputName, inputValue) => {
+            dispatch(activityFormChanged(inputName, inputValue));
         }
     }
 }
 
 const AddActivity = (props) => {
-    return <ActivityForm header="New activity" onClick={props.onClick}/>
+    return <ActivityForm header="New activity" nameValue={props.nameValue} tagValue={props.tagValue} onSubmitAction={props.onSubmitAction} onFormUpdate={props.onFormUpdate}/>
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddActivity)
