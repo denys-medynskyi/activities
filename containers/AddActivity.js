@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { activityFormChanged } from '../actions/index'
+import { addActivity } from '../actions/index'
 import ActivityForm from '../components/ActivityForm'
 
 
@@ -14,8 +15,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubmitAction: () => {
-            dispatch(addActivity())
+        onSubmitAction: (name, tag) => {
+            dispatch(addActivity(name, tag));
         },
         onFormUpdate: (inputName, inputValue) => {
             dispatch(activityFormChanged(inputName, inputValue));

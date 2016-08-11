@@ -11,10 +11,12 @@ export const ACTIVITY_FORM_CHANGED = 'ACTIVITY_FORM_CHANGED'
 
 let nextId = 0
 
-export const addActivity = () => {
+export const addActivity = (name, tag) => {
     return {
         type: ADD_ACTIVITY,
-        id: nextId++
+        id: nextId++,
+        name,
+        tag
     };
 }
 

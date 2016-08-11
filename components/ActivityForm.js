@@ -4,10 +4,9 @@ import PageHeader from '../components/PageHeader'
 
 
 const ActivityForm = ({header, nameValue, tagValue, onSubmitAction, onFormUpdate}) => {
-    console.log(nameValue)
     const onSubmit = (e) => {
         e.preventDefault();
-        onSubmitAction();
+        onSubmitAction(nameValue, tagValue);
     }
 
     const updateForm = (e) => {
