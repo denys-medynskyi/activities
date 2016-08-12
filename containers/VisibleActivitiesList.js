@@ -5,6 +5,7 @@ import ActivityList from '../components/ActivityList'
 
 const mapStateToProps = (state) => {
     return {
+        activities: state.activities
     }
 }
 

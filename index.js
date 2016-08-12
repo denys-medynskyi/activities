@@ -6,7 +6,15 @@ import { createStore } from 'redux'
 import App from './components/App'
 import appReducer from './reducers'
 
-let store = createStore(appReducer, window.devToolsExtension && window.devToolsExtension());
+let activities = [
+    {
+        'id': 1,
+        'name': 'Walk in the park',
+        'tag': 'Active'
+    }
+]
+
+let store = createStore(appReducer, {activities: activities}, window.devToolsExtension && window.devToolsExtension());
 
 render(
     <Provider store={store}>

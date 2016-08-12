@@ -2,14 +2,14 @@ import React, { PropTypes } from 'react'
 import Activity from './Activity'
 
 const ActivityList = ({activities}) => (
-    <ul>
+    <div>
         {activities.map(activity =>
             <Activity
                 key={activity.id}
                 {...activity}
             />
         )}
-    </ul>
+    </div>
 )
 
 ActivityList.propTypes = {
