@@ -6,15 +6,13 @@ import { createStore } from 'redux'
 import App from './components/App'
 import appReducer from './reducers'
 
-let activities = [
-    {
-        'id': 1,
-        'name': 'Walk in the park',
-        'tag': 'Active'
-    }
-]
+const LOCAL_STORAGE_KEY = 'reduxState'
+const persisitedState = localStorage.getItem(LOCAL_STORAGE_KEY) ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) : {};
 
-let store = createStore(appReducer, {activities: activities}, window.devToolsExtension && window.devToolsExtension());
+let store = createStore(appReducer, persisitedState, window.devToolsExtension && window.devToolsExtension());
+store.subscribe(()=>{
+    localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+})
 
 render(
     <Provider store={store}>
