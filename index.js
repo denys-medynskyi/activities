@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { loadState, saveState } from './localStorage'
 
 import App from './components/App'
 import appReducer from './reducers'
@@ -16,21 +17,9 @@ store.subscribe(()=>{
     localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
 
-const Foo = React.createClass({
-    render() {
-        return <h3>Foo</h3>
-    }
-})
-
-const history = syncHistoryWithStore(browserHistory, store)
-
 render(
     <Provider store={store}>
-        <Router history={history}>
-            <Route path="/" component={App}>
-                <Route path="foo" component={Foo}/>
-            </Route>
-        </Router>
+        <App/>
     </Provider>,
     document.getElementById('root')
 )

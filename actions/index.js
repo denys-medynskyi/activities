@@ -9,12 +9,12 @@ export const ACTIVITY_FORM_CHANGED = 'ACTIVITY_FORM_CHANGED'
     action creators
  */
 
-let nextId = 0
+import { v4 } from 'node-uuid'
 
 export const addActivity = (name, tag) => {
     return {
         type: ADD_ACTIVITY,
-        id: nextId++,
+        id: v4(),
         name,
         tag
     };

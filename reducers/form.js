@@ -1,4 +1,5 @@
 import { ACTIVITY_FORM_CHANGED } from '../actions/index'
+import { ADD_ACTIVITY } from '../actions/index'
 
 const form = (state = {}, action) => {
     var input = {};
@@ -6,6 +7,8 @@ const form = (state = {}, action) => {
     switch (action.type) {
         case ACTIVITY_FORM_CHANGED:
             return Object.assign({}, state, input);
+        case ADD_ACTIVITY:
+            return {};
         default:
             return state;
     }
