@@ -17,8 +17,8 @@ const ActivityForm = ({header, nameValue, tagValue, onSubmitAction, onFormUpdate
         <div className="row">
             <form className="col s6" onSubmit={onSubmit}>
                 <PageHeader text={header}></PageHeader>
-                <TextInput id="name" defaultValue={nameValue} placeholder="Enter name" name="name" onChange={updateForm}></TextInput>
-                <TextInput id="tag" defaultValue={tagValue} placeholder="Enter tag" name="tag" onChange={updateForm}></TextInput>
+                <TextInput id="name" value={nameValue} placeholder="Enter name" name="name" onChange={updateForm}></TextInput>
+                <TextInput id="tag" value={tagValue} placeholder="Enter tag" name="tag" onChange={updateForm}></TextInput>
                 <div className="row">
                     <div className="col s12">
                         <button className="btn waves-effect waves-light" type="submit" name="action">Submit
