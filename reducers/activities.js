@@ -1,4 +1,5 @@
 import { ADD_ACTIVITY } from '../actions/index'
+import { DELETE_ACTIVITY } from '../actions/index'
 
 const activity = (state = {}, action) => {
     switch (action.type) {
@@ -20,6 +21,8 @@ const activities = (state = [], action) => {
                 ...state,
                 activity(undefined, action)
             ]
+        case DELETE_ACTIVITY:
+            return state.filter((item) => item.id != action.id );
         default:
             return state;
     }

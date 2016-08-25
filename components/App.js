@@ -8,12 +8,9 @@ import { Link } from 'react-router'
 const App = ({children}) => {
     return (
         <div>
-            <AddActivity/>
             <VisibleActivitiesList/>
         </div>
     )
-    // <Link to="/foo">Foo</Link>
-    // <div style={{ marginTop: '1.5em' }}>{children}</div>
 }
 
 export default App

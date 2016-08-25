@@ -4,6 +4,7 @@
 
 export const ADD_ACTIVITY = 'ADD_ACTIVITY'
 export const ACTIVITY_FORM_CHANGED = 'ACTIVITY_FORM_CHANGED'
+export const DELETE_ACTIVITY = 'DELETE_ACTIVITY'
 
 /*
     action creators
@@ -25,5 +26,12 @@ export const activityFormChanged = (inputName, inputValue) => {
         type: ACTIVITY_FORM_CHANGED,
         inputName,
         inputValue
+    }
+}
+
+export const deleteActivity = (id) => {
+    return {
+        type: DELETE_ACTIVITY,
+        id: id
     }
 }

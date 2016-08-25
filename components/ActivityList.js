@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import Activity from './Activity'
+import Activity from '../containers/Activity'
 
 const ActivityList = ({activities}) => (
     <div>
