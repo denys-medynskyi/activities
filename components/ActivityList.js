@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 import Activity from '../containers/Activity'
 
 const ActivityList = ({activities}) => (
@@ -9,6 +10,7 @@ const ActivityList = ({activities}) => (
                 {...activity}
             />
         )}
+        <Link children="Add activity" to="new"/>
     </div>
 )
 

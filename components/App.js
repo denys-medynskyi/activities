@@ -5,10 +5,10 @@ import VisibleActivitiesList from '../containers/VisibleActivitiesList'
 import { Link } from 'react-router'
 
 
-const App = ({children}) => {
+const App = (props) => {
     return (
         <div>
-            <VisibleActivitiesList/>
+            {props.children}
         </div>
     )
 }

@@ -2,8 +2,12 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import { IndexRoute, Redirect, Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import App from './components/App'
+import AddActivity from './containers/AddActivity'
+import VisibleActivitiesList from './containers/VisibleActivitiesList'
 import appReducer from './reducers'
 
 const LOCAL_STORAGE_KEY = 'reduxState'
@@ -14,9 +18,18 @@ store.subscribe(()=>{
     localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
 
+// Create an enhanced history that syncs navigation events with the store
+const history = syncHistoryWithStore(browserHistory, store)
+
 render(
     <Provider store={store}>
-        <App/>
+        <Router history={history}>
+            <Route path="/" component={App}>
+                <IndexRoute component={VisibleActivitiesList} />
+                <Route path="new" component={AddActivity}/>
+                <Redirect from="*" to="/" />
+            </Route>
+        </Router>
     </Provider>,
     document.getElementById('root')
 )
