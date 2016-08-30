@@ -9,6 +9,7 @@ const TextInput = ({ id, name, placeholder, onChange, value }) => (
                 onChange={onChange}
                 name={name}
                 defaultValue={value}
+                required='required'
             />
             <label htmlFor={name}>{name}</label>
         </div>
