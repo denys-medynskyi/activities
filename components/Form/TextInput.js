@@ -1,15 +1,14 @@
 import React, { PropTypes } from 'react'
 //TODO: replace with https://github.com/callemall/material-ui
-const TextInput = ({ id, name, placeholder, onChange, defaultValue }) => (
+const TextInput = ({ id, name, placeholder, onChange, value }) => (
     <div className="row">
         <div className="input-field col s12">
             <input
-                placeholder={placeholder || name}
                 id={id} type="text"
                 className="validate"
                 onChange={onChange}
                 name={name}
-                defaultValue={defaultValue}
+                defaultValue={value}
             />
             <label htmlFor={name}>{name}</label>
         </div>
@@ -20,7 +19,7 @@ TextInput.propTypes = {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         onChange: PropTypes.func.isRequired,
-        defaultValue: PropTypes.string,
+        value: PropTypes.string,
         placeholder: PropTypes.string
 }
 
