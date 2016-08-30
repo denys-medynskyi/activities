@@ -4,7 +4,9 @@ const ActivityElement = ({id, name, onDeleteAction}) => {
 
     const onDelete = (e) => {
         e.preventDefault();
-        onDeleteAction(id);
+        if(confirm("Are you sure you want to delete ?")) {
+            onDeleteAction(id);
+        }
     }
 
     const onEdit = (e) => {

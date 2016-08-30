@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import TextInput from '../components/Form/TextInput'
 import PageHeader from '../components/PageHeader'
-
+import { Link } from 'react-router'
 
 const ActivityForm = ({header, nameValue, tagValue, onSubmitAction, onFormUpdate}) => {
     const onSubmit = (e) => {
@@ -21,9 +21,14 @@ const ActivityForm = ({header, nameValue, tagValue, onSubmitAction, onFormUpdate
                 <TextInput id="tag" value={tagValue} placeholder="Enter tag" name="tag" onChange={updateForm}></TextInput>
                 <div className="row">
                     <div className="col s12">
-                        <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                            <i className="material-icons right">send</i>
-                        </button>
+                        <div className="col s6 text-left">
+                            <Link children="Cancel" to="/"/>
+                        </div>
+                        <div className="col s4  offset-s2">
+                            <button className="btn waves-effect waves-light full-width" type="submit" name="action">Submit
+                                <i className="material-icons right">send</i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>

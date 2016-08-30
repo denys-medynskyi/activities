@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { activityFormChanged } from '../actions/index'
 import { addActivity } from '../actions/index'
 import ActivityForm from '../components/ActivityForm'
@@ -24,9 +25,13 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const AddActivity = (props) => {
-    return <ActivityForm header="New activity" nameValue={props.nameValue} tagValue={props.tagValue} onSubmitAction={props.onSubmitAction} onFormUpdate={props.onFormUpdate}/>
+const NewActivity = (props) => {
+    return (
+        <div>
+            <ActivityForm header="New activity" nameValue={props.nameValue} tagValue={props.tagValue} onSubmitAction={props.onSubmitAction} onFormUpdate={props.onFormUpdate}/>
+        </div>
+    )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddActivity)
+export default connect(mapStateToProps, mapDispatchToProps)(NewActivity)
 

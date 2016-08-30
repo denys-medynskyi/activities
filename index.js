@@ -6,7 +6,7 @@ import { IndexRoute, Redirect, Router, Route, browserHistory } from 'react-route
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import App from './components/App'
-import AddActivity from './containers/AddActivity'
+import NewActivity from './containers/NewActivity'
 import VisibleActivitiesList from './containers/VisibleActivitiesList'
 import appReducer from './reducers'
 
@@ -26,7 +26,7 @@ render(
         <Router history={history}>
             <Route path="/" component={App}>
                 <IndexRoute component={VisibleActivitiesList} />
-                <Route path="new" component={AddActivity}/>
+                <Route path="new" component={NewActivity}/>
                 <Redirect from="*" to="/" />
             </Route>
         </Router>
