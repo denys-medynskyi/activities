@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { push } from 'react-router-redux'
 import { activityFormChanged } from '../actions/index'
 import { addActivity } from '../actions/index'
 import ActivityForm from '../components/ActivityForm'
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onSubmitAction: (name, tag) => {
             dispatch(addActivity(name, tag));
+            dispatch(push('/'));
         },
         onFormUpdate: (inputName, inputValue) => {
             dispatch(activityFormChanged(inputName, inputValue));

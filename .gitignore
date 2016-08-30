@@ -4,3 +4,4 @@
 /bin
 // obvious
 /node_modules
+*.log
