@@ -25,8 +25,8 @@ const ActivityForm = ({header, nameValue, tagValue, onSubmitAction, onFormUpdate
                             <Link children="Cancel" to="/"/>
                         </div>
                         <div className="col s4  offset-s2">
-                            <button className="btn waves-effect waves-light full-width" type="submit" name="action">Submit
-                                <i className="material-icons right">send</i>
+                            <button className="btn waves-effect waves-light full-width" type="submit" name="action">save
+                                <i className="material-icons right">save</i>
                             </button>
                         </div>
                     </div>

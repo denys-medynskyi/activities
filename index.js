@@ -1,12 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import {createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { IndexRoute, Redirect, Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 
 import App from './components/App'
 import NewActivity from './containers/NewActivity'
+import EditActivity from './containers/EditActivity'
+import Form from './containers/Form'
 import VisibleActivitiesList from './containers/VisibleActivitiesList'
 import appReducer from './reducers'
 
@@ -27,6 +29,7 @@ render(
         <Router history={history}>
             <Route path="/" component={App}>
                 <IndexRoute component={VisibleActivitiesList} />
+                <Route path="activities/:activityId" component={EditActivity} />
                 <Route path="new" component={NewActivity}/>
                 <Redirect from="*" to="/" />
             </Route>

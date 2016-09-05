@@ -1,9 +1,14 @@
-import { ADD_ACTIVITY } from '../actions/index'
-import { DELETE_ACTIVITY } from '../actions/index'
+import { ADD_ACTIVITY, DELETE_ACTIVITY, UPDATE_ACTIVITY } from '../actions/index'
 
 const activity = (state = {}, action) => {
     switch (action.type) {
         case ADD_ACTIVITY:
+            return {
+                id: action.id,
+                name: action.name,
+                tag: action.tag
+            }
+        case UPDATE_ACTIVITY:
             return {
                 id: action.id,
                 name: action.name,
@@ -21,6 +26,13 @@ const activities = (state = [], action) => {
                 ...state,
                 activity(undefined, action)
             ]
+        case UPDATE_ACTIVITY:
+            // debugger;
+            // let activityIndex = state.findIndex(activity => activity.id == action.id)
+            console.log(action);
+            return [
+                    activity(undefined, action)
+                ]
         case DELETE_ACTIVITY:
             return state.filter((item) => item.id != action.id );
         default:

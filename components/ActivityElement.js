@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
 const ActivityElement = ({id, name, onDeleteAction}) => {
 
@@ -21,9 +22,11 @@ const ActivityElement = ({id, name, onDeleteAction}) => {
                         <a href>
                             <i className="material-icons right" onClick={onDelete}>delete</i>
                         </a>
-                        <i className="material-icons right">edit</i>
+                        <Link to={`/activities/${id}`}>
+                            <i className="material-icons right">edit</i>
+                        </Link>
                         <span className="card-title">{name}</span>
-                        <p>Some info about activity</p>
+                        <p>{id}</p>
                     </div>
                 </div>
             </div>

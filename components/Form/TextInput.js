@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 const TextInput = ({ id, name, placeholder, onChange, value }) => (
     <div className="row">
         <div className="input-field col s12">
+            <span>{name}</span>
             <input
                 id={id} type="text"
                 className="validate"
@@ -11,7 +12,6 @@ const TextInput = ({ id, name, placeholder, onChange, value }) => (
                 defaultValue={value}
                 required='required'
             />
-            <label htmlFor={name}>{name}</label>
         </div>
     </div>
 )
