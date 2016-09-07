@@ -4,9 +4,8 @@ import { Link } from 'react-router'
 import { push } from 'react-router-redux'
 import { activityFormChanged } from '../actions/index'
 import { updateActivity } from '../actions/index'
+import { loadActivity } from '../actions/index'
 import ActivityForm from '../components/ActivityForm'
-
-let activityId = '32c0fbc3-9ae3-4d27-87ec-dcd24b28634b';
 
 const mapStateToProps = (state) => {
     return {
@@ -18,6 +17,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        fillForm: (id) => {
+          dispatch(loadActivity(id));
+        },
         onSubmitAction: (name, tag) => {
             dispatch(updateActivity(activityId, name, tag));
             dispatch(push('/'));
@@ -31,7 +33,7 @@ const mapDispatchToProps = (dispatch) => {
 const EditActivity = (props) => {
     return (
         <div>
-            <ActivityForm header="Edit activity" nameValue={props.nameValue} tagValue={props.tagValue} onSubmitAction={props.onSubmitAction} onFormUpdate={props.onFormUpdate}/>
+            <ActivityForm header="Edit activity" fillForm={props.fillForm} nameValue={props.nameValue} tagValue={props.tagValue} onSubmitAction={props.onSubmitAction} onFormUpdate={props.onFormUpdate}/>
         </div>
     )
 }

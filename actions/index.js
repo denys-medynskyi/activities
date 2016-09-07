@@ -3,11 +3,13 @@
  */
 
 export const ADD_ACTIVITY = 'ADD_ACTIVITY'
+export const LOAD_ACTIVITY = 'LOAD_ACTIVITY'
 export const DELETE_ACTIVITY = 'DELETE_ACTIVITY'
 export const UPDATE_ACTIVITY = 'UPDATE_ACTIVITY'
 
 export const ACTIVITY_FORM_CHANGED = 'ACTIVITY_FORM_CHANGED'
 export const ACTIVITY_FORM_RESET = 'ACTIVITY_FORM_RESET'
+export const ACTIVITY_FORM_FILLED_IN = 'ACTIVITY_FORM_FILLED_IN'
 
 /*
     action creators
@@ -44,6 +46,13 @@ export const activityFormChanged = (inputName, inputValue) => {
 export const deleteActivity = (id) => {
     return {
         type: DELETE_ACTIVITY,
+        id: id
+    }
+}
+
+export const activityFormFilledIn = (id) => {
+    return {
+        type: ACTIVITY_FORM_FILLED_IN,
         id: id
     }
 }

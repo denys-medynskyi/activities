@@ -29,7 +29,6 @@ const activities = (state = [], action) => {
         case UPDATE_ACTIVITY:
             // debugger;
             // let activityIndex = state.findIndex(activity => activity.id == action.id)
-            console.log(action);
             return [
                     activity(undefined, action)
                 ]
